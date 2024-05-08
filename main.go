@@ -8,7 +8,7 @@ import (
 
 // program to read a prog from A file, store it in a go file, execute the file and write file output in an output file
 
-func mainy() {
+func main() {
 	// read go code from file
 	filePath := "test1.txt"
 	code, err := os.ReadFile(filePath)
@@ -40,6 +40,9 @@ func mainy() {
 
 	// Write output to desired file
 	err = os.WriteFile("output.txt", []byte("wellformated\n"), 0o644)
+	if err != nil {
+		fmt.Println(err)
+	}
 	err = os.WriteFile("outputs.txt", output, 0o644)
 	if err != nil {
 		fmt.Println("Error:", err)
