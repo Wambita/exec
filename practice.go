@@ -20,8 +20,12 @@ import (
 // try to handle multiple programs
 
 func main() {
+	execute("test1.txt")
+}
+
+func execute(input string) {
 	// declare variables
-	inputFile := "test1.txt"
+	inputFile := input
 	temporaryFile := "temp.go"
 	executable := "temp"
 	outputfile := "output.txt"
